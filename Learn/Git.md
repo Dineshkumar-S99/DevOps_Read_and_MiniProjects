@@ -16,110 +16,215 @@ Git is an open source Distributed version control system which allow us to work 
 2. **no-fast-forward merge** → here the current main branch/other will also have commits after the branch has been created. so now to merge it will create a new commit with merge message and then will merge two branches.
 
 ### Commands
-→ to initialize the local repository
+to initialize the local repository
+
 	git init
-→ to add the user email
+
+to add the user email
+
 	git config --global user.email "email" 
+
+
 → to add the user id
+	
 	git config --global user.name "name/id" 
+
 → to see the added username and email
+	
 	git config --global --list 
+
 → to add the remote repository
+	
 	git remote add origin <url> 
+
 → to check the remote repo url
+	
 	git remote -v
+
 → to remove the remote repo
+	
 	git remote remove origin 
+
 → to add the files to the staging area
+	
 	git add <filename or . > 
+
 → to see the status of the file in stagin area or files history of commits
+	
 	git status 
+
 → to commit the files in staging area
+	
 	git commit -m "msg" 
+
 → to push the commited changes to the remote repo
+	
 	git push -u origin <main/branchname>
+
 → to change the master branch as main branch
+	
 	git branch -M main 
+
 → to push all the branches
+	
 	git push --all origin
+
 → to pull the remote repo to local or to pull specific remote branch to local and this will also update the local repo 
+	
 	git pull <url> 
+
 → to have complete copy of the remote repo, mostly it will clone the main branch
+	
 	git clone <url> 
+
 → to clone the exact branch we want and can also save it in name as we want
+	
 	git clone -b <branchname> <url> 
+
 → fetch all the latest changes to the repo but won't update it unlike pull
+	
 	git fetch <url> 
+
 → to overcome the non fast forward error
+	
 	git pull origin main --allow-unrelated-histories 
+
 → to see all the previous commits and info about the commit hash, author and cmt date
+	
 	git log 
+
 → to see logs in less format and with less id characters (i.e: to view in compact way)
+	
 	git log --oneline 
+
 → to see the last n number of commits
+	
 	git log -n number 
+
 → to see the changes we did in the particular commit
+	
 	git show <commitd> 
+
 → to see all the local branches
+	
 	git branch 
+
 → to create a branch
+	
 	git branch <bname> 
+
 → to delete the branch
+	
 	git branch -d <bname> 
+
 → to see both local and remote branches
+	
 	git branch -a 
+
 → to create a new branch
+	
 	git branch -C <branchname> 
+
 → to  create a new branch and switch to that branch 
+	
 	git checkout -b <branchname> 
+
 → to switch between branches
+	
 	git checkout/switch <branchname> 
+
 → to merge the given branch with the current branch
+	
 	git merge <bname> 
+
 → merge branch with cmt msg
+	
 	git merge <bname> -m "msg" 
+
 → merge thebbranch without ff error
+	
 	git merge --no-ff <bname> 
+
 → this file can be used for exception, if we don't want a file to be VC then use this file and mention those files inside this eg: like key, pswd
+
 	.gitignore 
+
 → to revert the file to previous version even if not made to staging area
+
 	git checkout <filename> 
+
 → to remove the file
+
 	git rm filename 
-	  → will just remove the file from git and tracking, the file will remain in the system (but not the best way to do because sometime we may accidentaly stage back again so use .gitignore)
+	  
+		→ will just remove the file from git and tracking, the file will remain in the system (but not the best way to do because sometime we may accidentaly stage back again so use .gitignore)
+
 	      1. git rm - - cached <filename> 
-	  → will also remove the file from the device
+	  
+		→ will also remove the file from the device
+
 	      1. git rm -f <filename> 
+
 → shows the changes we did before staging and now
+
 	git diff 
+
 → to revert back to prev version if the file is staged
+
 	git diff --cached 
+
 → to remove it from the staging area (i.e: to unstage)
+
 	git restore --staged <filename> 
+
 → to get back to the cmt id but will leave a history
+
 	git revert cmtid 
+
 → to get back to the previous commit
+
 	git revert HEAD 
+
 → revert back and don't leave any history and even del histories after the id
+
 	git reset --hard cmtid 
+
 → to generate an ssh pub and priv key
+
 	ssh-keygen.exe 
+
 → will create an rsa based ssh pub and private key
+
 	ssh-keygen -t rsa -C email 
+
 → to update the git
+
 	git update -git-for-windows 
+
 → to remove the file from cached so that it can be ignored by gitignore even though we commited it before
+
 	git rm --cached <filename> 
+
 → to discard the changes in the working directory. i.e: even before staging (note: this will be only for previously commited files)
+
 	git restore <filename> 
+
     1. and it will also work in case where if we have a file that we staged and again we modified it, now it shows modified twice, one to be commited and other to be staged, here we can use git restore
+
 → to list the changed files as well
+
 	git log - - name-only 
+
 → to revert the last change we made or committed
+
 	git reset --soft HEAD~1 
+
 → to see previous commit history along with the branch they were committed on
+
 	git log --graph --decorate` 
+
 → to merge the fetched changes from origin to our branch (can direcly pull to do  fetch and this merge)
+
 	git merge origin/master 
 1. 
 2. .
